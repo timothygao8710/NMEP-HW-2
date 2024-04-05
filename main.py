@@ -23,29 +23,31 @@ from utils import create_logger, load_checkpoint, save_checkpoint
 
 
 def parse_option():
-    parser = argparse.ArgumentParser("Vision model training and evaluation script", add_help=False)
-    parser.add_argument("--cfg", type=str, required=True, metavar="FILE", help="path to config file")
-    parser.add_argument("--opts", help="Modify config options by adding 'KEY VALUE' pairs.", default=None, nargs="+")
+    print("KJKL:SDF:JKLFDSJ:KL")
+    # parser = argparse.ArgumentParser("Vision model training and evaluation script", add_help=False)
+    # parser.add_argument("--cfg", type=str, required=True, metavar="FILE", help="path to config file")
+    # parser.add_argument("--opts", help="Modify config options by adding 'KEY VALUE' pairs.", default=None, nargs="+")
 
-    # easy config modification
-    parser.add_argument("--batch-size", type=int, help="batch size for single GPU")
-    parser.add_argument("--data-path", type=str, help="path to dataset")
-    parser.add_argument("--resume", help="resume from checkpoint")
-    parser.add_argument(
-        "--output",
-        default="output",
-        type=str,
-        metavar="PATH",
-        help="root of output folder, the full path is <output>/<model_name>/<tag> (default: output)",
-    )
-    parser.add_argument("--eval", action="store_true", help="Perform evaluation only")
-    parser.add_argument("--throughput", action="store_true", help="Test throughput only")
+    # # easy config modification
+    # parser.add_argument("--batch-size", type=int, help="batch size for single GPU")
+    # parser.add_argument("--data-path", type=str, help="path to dataset")
+    # parser.add_argument("--resume", help="resume from checkpoint")
+    # parser.add_argument(
+    #     "--output",
+    #     default="output",
+    #     type=str,
+    #     metavar="PATH",
+    #     help="root of output folder, the full path is <output>/<model_name>/<tag> (default: output)",
+    # )
+    # parser.add_argument("--eval", action="store_true", help="Perform evaluation only")
+    # parser.add_argument("--throughput", action="store_true", help="Test throughput only")
 
-    args = parser.parse_args()
+    # args = parser.parse_args()
 
-    config = get_config(args)
+    # config = get_config(args)
 
-    return args, config
+    # return args, config
+    return None, None
 
 
 # def main(config):
