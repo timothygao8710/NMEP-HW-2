@@ -2,8 +2,11 @@ from torch.utils.data import DataLoader
 
 from data.datasets import CIFAR10Dataset, MediumImagenetHDF5Dataset
 
+# from data.datasets import CIFAR10Dataset
+# 
 
 def build_loader(config):
+    
     if config.DATA.DATASET == "cifar10":
         print("SDFJKDFSJKFDSJKFDSFSDJKH")
         dataset_train = CIFAR10Dataset(img_size=config.DATA.IMG_SIZE, train=True)

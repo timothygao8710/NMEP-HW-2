@@ -2,7 +2,7 @@ AUG:
   COLOR_JITTER: 0.4
 DATA:
   BATCH_SIZE: 256
-  DATASET: "cifar10"
+  DATASET: "hafsafsjfsadjknafdsjkfasnjkl"
   IMG_SIZE: 32
   NUM_WORKERS: 32
   PIN_MEMORY: True
