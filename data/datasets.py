@@ -15,6 +15,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 from torchvision.transforms import Compose, Normalize, PILToTensor, Resize
 
+
 class MediumImagenetHDF5Dataset(Dataset):
     def __init__(
         self,
@@ -106,7 +107,7 @@ class CIFAR10Dataset(Dataset):
             ]
         return transforms.Compose(transform)
 
-test = MediumImagenetHDF5Dataset(img_size=224)
+# test = MediumImagenetHDF5Dataset(img_size=224)
 
-test.sample_ten()
+# test.sample_ten()
 
