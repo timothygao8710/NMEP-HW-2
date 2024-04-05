@@ -39,5 +39,6 @@ class AlexNet(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = self.features(x)
         x = torch.flatten(x, 1)
+        print(x.shape, x)
         x = self.classifier(x)
         return x
