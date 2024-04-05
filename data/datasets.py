@@ -13,47 +13,7 @@ from torchvision.datasets import CIFAR10, ImageFolder
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
-# from torchvision.transforms import Compose, Normalize, PILToTensor, Resize
-
-
-# deprecated in favor of MediumImagenetHDF5Dataset
-# class MediumImagenetDataset(Dataset):
-#     def __init__(self, img_size, split:str='train', augment=True):
-#         assert split in ['train', 'val', 'test']
-#         self.split = split
-#         self.augment = augment
-#         self.input_size = img_size
-#         self.transform = self._get_transforms()
-#         ds = ImageFolder("/data/medium-imagenet/data")
-#         if split == 'train':
-#             self.dataset = Subset(ds, range(0, len(ds) * 9 // 10))
-#         else:
-#             self.dataset = Subset(ds, range(len(ds) * 9 // 10, len(ds)))
-
-#     def __getitem__(self, index):
-#         image, label = self.dataset[index]
-#         image = self.transform(image)
-#         return image, label
-
-#     def __len__(self):
-#         return len(self.dataset)
-
-#     def _get_transforms(self):
-#         transform = []
-#         transform.append(transforms.PILToTensor())
-#         transform.append(lambda x: x.to(torch.float))
-#         normalization = torch.Tensor([[0.485, 0.456, 0.406], [0.229, 0.224, 0.225]])
-#         transform.append(transforms.Normalize(normalization[0], normalization[1]))
-#         if self.train and self.augment:
-#             transform.extend(
-#                 [
-#                     transforms.RandomHorizontalFlip(),
-#                     transforms.ColorJitter(brightness=0.4, contrast=0.4, saturation=0.4),
-#                 ]
-#             )
-#         transform.append(transforms.Resize([self.input_size] * 2))
-#         return transforms.Compose(transform)
-
+from torchvision.transforms import Compose, Normalize, PILToTensor, Resize
 
 class MediumImagenetHDF5Dataset(Dataset):
     def __init__(
@@ -145,3 +105,8 @@ class CIFAR10Dataset(Dataset):
                 transforms.Resize([self.img_size] * 2),
             ]
         return transforms.Compose(transform)
+
+test = MediumImagenetHDF5Dataset(img_size=224)
+
+test.sample_ten()
+
