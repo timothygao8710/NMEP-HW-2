@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import random
+
 import h5py
+import matplotlib.pyplot as plt
 import torch
 from PIL import Image, ImageFile
 from torch.utils.data import Dataset, Subset
@@ -94,6 +97,20 @@ class MediumImagenetHDF5Dataset(Dataset):
                 ]
             )
         return transforms.Compose(transform)
+    
+    def sample_ten(self):
+        N = len(self)
+        indices = random.sample(range(N), 10)
+
+        # Display the images
+        fig, axes = plt.subplots(2, 5, figsize=(12, 6))
+        for i, index in enumerate(indices):
+            image, label = self[index]
+            axes[i // 5, i % 5].imshow(image.permute(1, 2, 0))
+            axes[i // 5, i % 5].set_title(f"Label: {label}")
+            axes[i // 5, i % 5].axis("off")
+        plt.tight_layout()
+        plt.show()
 
 
 class CIFAR10Dataset(Dataset):
