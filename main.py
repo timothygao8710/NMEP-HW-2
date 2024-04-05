@@ -216,6 +216,8 @@ def evaluate(config, data_loader, model):
 
 if __name__ == "__main__":
     args, config = parse_option()
+    
+    print(args, config)
 
     seed = config.SEED
     torch.manual_seed(seed)
